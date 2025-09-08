@@ -449,42 +449,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Device Detection
-        function detectDevice() {
-            const width = window.innerWidth;
-            const userAgent = navigator.userAgent;
-            let deviceType = '';
-            let deviceIcon = '';
-
-            if (width <= 576) {
-                deviceType = 'Móvil';
-                deviceIcon = 'bi-phone';
-            } else if (width <= 768) {
-                deviceType = 'Tablet';
-                deviceIcon = 'bi-tablet';
-            } else if (width <= 1200) {
-                deviceType = 'Laptop';
-                deviceIcon = 'bi-laptop';
-            } else {
-                deviceType = 'Desktop';
-                deviceIcon = 'bi-display';
-            }
-
-            // Detect OS
-            let os = '';
-            if (userAgent.includes('Windows')) os = 'Windows';
-            else if (userAgent.includes('Mac')) os = 'macOS';
-            else if (userAgent.includes('Android')) os = 'Android';
-            else if (userAgent.includes('iOS')) os = 'iOS';
-            else if (userAgent.includes('Linux')) os = 'Linux';
-
-            const deviceInfo = document.getElementById('deviceInfo');
-            deviceInfo.innerHTML = `<i class="bi ${deviceIcon}"></i> ${deviceType} - ${os}`;
-
-            // Show alert with device info
-            alert(`Dispositivo detectado:\n- Tipo: ${deviceType}\n- Sistema: ${os}\n- Resolución: ${width}x${window.innerHeight}px`);
-        }
-
         // Smooth scrolling
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
