@@ -1,0 +1,239 @@
+/* Variables globales de colores */
+:root {
+    --primary-color: #6f42c1;
+    --secondary-color: #20c997;
+    --accent-color: #fd7e14;
+    --dark-color: #212529;
+}
+
+/* Estilos básicos del cuerpo */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* ---------------- HERO ---------------- */
+/* Sección principal con fondo degradado */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    min-height: 100vh; /* ocupa toda la altura de la pantalla */
+    display: flex;
+    align-items: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto decorativo animado sobre el hero */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* puntos blancos animados */
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    animation: float 20s infinite linear;
+}
+
+/* Animación flotante */
+@keyframes float {
+    0% { transform: translateY(0px) translateX(0px); }
+    50% { transform: translateY(-20px) translateX(10px); }
+    100% { transform: translateY(0px) translateX(0px); }
+}
+
+/* Contenido dentro del hero */
+.hero-content {
+    position: relative;
+    z-index: 2; /* para que quede encima del fondo animado */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3); /* sombra para mejor visibilidad */
+}
+
+/* Ajuste de tamaño en móviles */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ---------------- NAVBAR ---------------- */
+/* Barra de navegación */
+.navbar {
+    transition: all 0.3s ease; /* animación suave */
+    padding: 1rem 0;
+}
+
+/* Navbar con fondo visible al hacer scroll */
+.navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px); /* efecto de desenfoque */
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+/* Colores de los enlaces al hacer scroll */
+.navbar.scrolled .navbar-brand,
+.navbar.scrolled .nav-link {
+    color: var(--dark-color) !important;
+}
+
+/* ---------------- CARDS ---------------- */
+/* Tarjetas de características */
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    border: none;
+}
+
+/* Efecto hover en tarjetas */
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Icono dentro de la tarjeta */
+.feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* ---------------- SECCIONES ---------------- */
+.section {
+    padding: 5rem 0; /* espacio superior e inferior */
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+/* ---------------- GALERÍA ---------------- */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* recorta la imagen sin deformarla */
+    transition: transform 0.3s ease;
+}
+
+/* Zoom al pasar el mouse */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Capa superpuesta en hover */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(111, 66, 193, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar overlay en hover */
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* ---------------- FORMULARIO ---------------- */
+.contact-form {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 3rem;
+}
+
+.form-control {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Botón personalizado */
+.btn-custom {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 2rem;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    color: white;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: var(--dark-color);
+    color: white;
+    padding: 3rem 0;
+}
+
+/* ---------------- INDICADOR DE DISPOSITIVO ---------------- */
+.device-info {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    z-index: 1000;
+}
+
+/* ---------------- ANIMACIÓN DE CARGA ---------------- */
+.loading {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+/* Animación de giro */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
