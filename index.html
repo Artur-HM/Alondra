@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!-- permite cracteres especiales -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web</title>
+    <title>Pruebas</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -12,7 +12,7 @@
     
     <style>
         :root {
-            --primary-color: #6f42c1;
+            --primary-color: #6f42c1;   
             --secondary-color: #20c997;
             --accent-color: #fd7e14;
             --dark-color: #212529;
@@ -44,6 +44,44 @@
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
             animation: float 20s infinite linear;
         }
+
+        /* Glosario alineado a la izquierda */
+        #glossarySidebar {
+            position: fixed;
+            top: 100px; /* distancia desde el top */
+            left: 0;
+            width: 220px;
+            max-height: 80vh;
+            overflow-y: auto;
+            background-color: #6f42c1; /* color principal */
+            color: white;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            padding: 10px;
+        }
+
+        #glossarySidebar ul {
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+
+        /*Texto del glosario*/
+        #glossarySidebar li {
+            color: white;
+            background-color: rgba(121, 217, 255, 0.1);
+            margin-bottom: 5px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            list-style: none;
+        }
+
+        /*Ajusta el contenido a pesar del glosario*/
+        .container {
+            margin-left: 240px; /* ancho del sidebar + margen */
+        }
+
 
         @keyframes float {
             0% { transform: translateY(0px) translateX(0px); }
@@ -232,8 +270,20 @@
             100% { transform: rotate(360deg); }
         }
     </style>
-</head>
+</head><!--  -->
 <body>
+
+    <!-- Glosario -->
+    <div id="glossarySidebar">
+        <h5 class="text-white text-center py-2 bg-primary">Glosario</h5>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>HTML:</strong> Lenguaje de marcado para páginas web.</li>
+            <li class="list-group-item"><strong>CSS:</strong> Lenguaje para estilos visuales de páginas web.</li>
+            <li class="list-group-item"><strong>JS:</strong> Lenguaje de programación para interactividad.</li>
+            <li class="list-group-item"><strong>Bootstrap:</strong> Framework para diseño responsivo.</li>
+        </ul>
+    </div>
+
 
     <!-- Menu de navegacion -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: transparent;">
