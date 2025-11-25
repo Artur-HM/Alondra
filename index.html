@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo Humano</title>
+    <title>Etapas del Desarrollo Humano</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estilos.css">
@@ -29,9 +29,8 @@ body{padding-top:80px;}
                     <li class="nav-item"><a class="nav-link" href="#prenatal">Etapa Prenatal</a></li>
                     <li class="nav-item"><a class="nav-link" href="#infancia">Infancia</a></li>
                     <li class="nav-item"><a class="nav-link" href="#adolescencia">Adolescencia</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#adultez-temprana">Adultez Temprana</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#adultez-temprana">Adultez</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cicloVital">Modelo del ciclo vital</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#adultez-tardía">Adultez Tardía</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
                 </ul>
             </div>
@@ -416,10 +415,10 @@ body{padding-top:80px;}
         </div>
     </section>
 
-    <!-- ADULTEZ TEMPRANA -->
+    <!-- ADULTEZ -->
     <section id="adultez-temprana" class="section bg-light">
         <div class="container">
-    <h2 class="section-title">Adultez Temprana (18 - 40 años)</h2>
+    <h2 class="section-title">Adultez(18 - 40 años)</h2>
     <p class="lead">Etapa de independencia, decisiones importantes y construcción de proyectos personales.</p>
 
     <!-- CARD 1 ─ TEXTO + IMAGEN DERECHA -->
@@ -570,7 +569,7 @@ body{padding-top:80px;}
 
     </section>
 
-    <!-- ADULTEZ INTERMEDIA -->
+    <!-- CICLO VITAL -->
     <section id="cicloVital" class="section">
         <div class="circular-timeline-container my-5">
         <h2 class="text-center mb-4">Modelo del Ciclo Vital – Schaie</h2>
@@ -615,34 +614,30 @@ body{padding-top:80px;}
 
     </section>
 
-    <!-- ADULTEZ TARDÍA -->
-    <section id="adultez-tardía" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Adultez Tardía (65+ años)</h2>
-            <p class="lead">Etapa de introspección, legado, cambios físicos y disfrute de la experiencia de vida.</p>
-
-            <div class="row">
-                <div class="col-md-4"><div class="info-box">Cambios físicos naturales.</div></div>
-                <div class="col-md-4"><div class="info-box">Sabiduría acumulada.</div></div>
-                <div class="col-md-4"><div class="info-box">Mayor estabilidad emocional.</div></div>
-            </div>
-        </div>
-    </section>
-
     <!-- CONTACTO -->
-    <section id="contacto" class="section">
-        <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <p class="text-center">Envíanos tus dudas o comentarios</p>
-            <form class="contact-form mx-auto" style="max-width: 600px;">
-                <input type="text" class="form-control" placeholder="Nombre">
-                <input type="email" class="form-control" placeholder="Correo">
-                <textarea class="form-control" rows="4" placeholder="Mensaje"></textarea>
-                <button class="btn btn-custom w-100 mt-3"><i class="bi bi-send"></i> Enviar</button>
-            </form>
-        </div>
-    </section>
+    <section id="contacto" class="section" style="background-color:#7cb3e0;">
+    <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="text-center">Envíanos tus dudas o comentarios</p>
 
+        <form action="https://formsubmit.co/alondracortes741@gmail.com" method="POST" class="contact-form mx-auto" style="max-width: 600px;">
+
+            <!-- Quita el captcha para que sea más rápido -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Redirección después de enviar -->
+            <input type="hidden" name="_next" value="https://tu-pagina.com/gracias.html">
+
+            <input type="text" name="nombre" class="form-control mb-3" placeholder="Nombre" required>
+            <input type="email" name="correo" class="form-control mb-3" placeholder="Correo" required>
+            <textarea class="form-control mb-3" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+
+            <button class="btn btn-custom w-100 mt-2" type="submit">
+                <i class="bi bi-send"></i> Enviar
+            </button>
+        </form>
+    </div>
+</section>
     <footer class="text-center py-4 text-white">
         <p>© 2025 Desarrollo Humano — Proyecto Escolar</p>
     </footer>
