@@ -234,3 +234,82 @@ footer {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+.circular-timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Círculo general */
+.circle {
+    width: 620px;
+    height: 620px;
+    border-radius: 50%;
+    border: 6px dashed #0d6efd;
+    position: relative;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Cada ítem */
+.circle .item {
+    position: absolute;
+    width: 170px;
+    background: white;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    font-size: 13px;
+}
+
+/* Numeración */
+.circle .item span {
+    display: inline-block;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* -------- COLORES POR ETAPA -------- */
+.color1 span { background: #007bff; }   /* Azul */
+.color2 span { background: #28a745; }   /* Verde */
+.color3 span { background: #ffc107; }   /* Amarillo */
+.color4 span { background: #fd7e14; }   /* Naranja */
+.color5 span { background: #6610f2; }   /* Morado */
+.color6 span { background: #20c997; }   /* Verde aqua */
+.color7 span { background: #dc3545; }   /* Rojo */
+
+/* Posiciones alrededor del círculo */
+.item1 { top: -20px; left: 50%; transform: translateX(-50%); }
+.item2 { top: 12%; right: -40px; }
+.item3 { top: 45%; right: -40px; }
+.item4 { bottom: -4%; right: 75px; }
+.item5 { bottom: -30px; left: 25%; transform: translateX(-50%); }
+.item6 { bottom: 28%; left: -90px; }
+.item7 { top: 12%; left: -40px; }
+
+/* -------- RESPONSIVO -------- */
+@media (max-width: 768px) {
+    .circle {
+        width: 360px;
+        height: 360px;
+    }
+
+    .circle .item {
+        width: 120px;
+        font-size: 11px;
+    }
+
+    .item1 { top: -14px; }
+    .item5 { bottom: -14px; }
+
+    .item2 { right: -25px; }
+    .item3 { right: -25px; }
+    .item4 { right: -25px; }
+
+    .item6 { left: -25px; }
+    .item7 { left: -25px; }
+}
